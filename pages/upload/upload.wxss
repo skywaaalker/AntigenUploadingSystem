@@ -1,0 +1,99 @@
+/* pages/upload/upload.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+} 
+.top{
+  width: 100%;
+}
+.banner{
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.column{
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+.name_no{
+  margin-right: 13px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  background-color: rgba(233, 233, 236, 0.699);
+}
+
+.box{
+  height: 70px;
+  width: 70px;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 12px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: lightblue;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.color-red{
+  color: red;
+}
+.textarea_{
+  margin-top: 5px;
+  margin-left: 12px;
+  height: 40px;
+  background-color: rgb(243, 240, 240);
+}
+.neg{
+  width: 60%;
+  display: flex;
+  margin-top: 50px;
+}
+.buttonCol{
+  margin-top: 10px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+.btn{
+  height: 40px;
+  width: 100px !important;
+  background: transparent;
+  border: 1px solid rgb(23, 182, 245);
+  border-radius: 0;
+}
+.btn::after{border:none}
+.btn.active{
+  background-color: rgb(25, 141, 236);
+  color: white;
+  border: 0;
+  border-radius: 0;
+}
+.btn1{
+  color: green;
+}
+.btn2{
+  color: red;
+}
+.btn3{
+  color:rgb(194, 194, 51);
+}
+
+.column1{
+  width: 100%;
+}
+.submit{
+  width: 95% !important;
+  background-color: rgb(25, 141, 236);
+  color: white;
+}
+
+
+

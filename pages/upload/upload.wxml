@@ -1,0 +1,34 @@
+<!--pages/upload/upload.wxml-->
+<!-- <text>pages/upload/upload.wxml</text>
+<view>{{name}}</view>
+<view>{{no}}</view> -->
+<view class="container">
+  <view class="top"> 
+  <image class="banner"  src="/images/banner.jpg" ></image>
+  </view>
+  <view class="column">
+    <text><text class="color-red">*</text>请确认你的姓名学号:</text>
+    <!-- <textarea class="textarea_"> {{name}} {{no}}</textarea> -->
+    <view class="name_no">
+    <text clsss="check" decode="true">{{name}} &ensp;&ensp;&ensp;{{no}}</text> 
+    </view>
+  </view>
+  <view class="column">
+    <text><text class="color-red">*</text>抗原检测结果:</text>
+    <view class="buttonCol">
+      <button class="btn btn1 {{btn1checked?'active':''}}" bindtap="click1"> 阴性</button>
+      <button class="btn btn2 {{btn2checked?'active':''}}" bindtap="click2"> 阳性</button>
+      <button class="btn btn3 {{btn3checked?'active':''}}" bindtap="click3"> 异常</button>
+    </view>
+  </view>
+  <view class="column">
+    <text><text class="color-red">*</text>请上传抗原检测结果图片</text>
+    <view class="box" bindtap="uploadImg" style="color: gray;">点击此处上传图片
+    </view>
+  </view>
+  <view class="column1 bot">
+    <button class="submit">提交
+    </button>
+  </view>
+
+</view>
