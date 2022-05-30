@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <!-- <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
       <view class="userinfo-avatar" bindtap="bindViewTap">
         <open-data type="userAvatarUrl"></open-data>
@@ -16,18 +16,22 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
-  <!-- <view class="usermotto">
-    <text class="user-motto">{{students[2]}}</text>
   </view> -->
+
+  <view class="imgP">
+    <image class="shtech" src="../../images/shanghaitech.png" mode="aspectFill"></image>
+  </view>
+  <view class="title">
+    <tex>上海科技大学抗原提交系统</tex>
+  </view>
   <view class="stu-info">
     <form catchsubmit="formSubmit" catchreset="formReset">
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-          <input style="margin: 30px;" class="weui-input" auto-focus placeholder="学号" bindinput="getStuNo"/>
+          <input style="margin: 10px; width: 200px; height: 30px; font-size: 18px ;" class="weui-input" auto-focus placeholder="{{stuNo==''?'学号':stuNo}}" bindinput="getStuNo"/>
         </view>
         <view class="weui-cell weui-cell_input">
-          <input style="margin: 30px;" class="weui-input"  placeholder="姓名" bindinput="getStuName"/>
+          <input style="margin: 10px; width: 200px; height: 30px; font-size: 18px ;" class="weui-input"  placeholder="{{stuName==''?'姓名':stuName}}"  bindinput="getStuName"/>
         </view>
       </view>
     </form>

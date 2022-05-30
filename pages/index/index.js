@@ -29,6 +29,12 @@ Page({
         canIUseGetUserProfile: true
       })
     }
+    var that = this 
+    that.setData({
+      stuNo: wx.getStorageSync('no'),
+      stuName: wx.getStorageSync('name')
+    })
+
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -63,7 +69,6 @@ Page({
   },
   getStuNo(e){
     // var stuNo = e.detail.value;
-    console.log('获取输入学号', e.detail.value)
     this.setData({
       stuNo: e.detail.value
     })
@@ -73,25 +78,49 @@ Page({
       stuName: e.detail.value
     })
   },
-  login(){
+  login(e){
     let no = this.data.stuNo
     let name = this.data.stuName
     console.log('登录中', no, name)
+    if (this.data.stuNo == '' || this.data.stuName == '') {
+      wx.showToast({
+        title: '学号或姓名不能为空',
+        icon: 'error',
+        duration: 2000
+      })
+    }
 
     wx.cloud.database().collection('stuInfo').where({
       stuNo: no,
     }).get({
       success(res) {
         let stuInfo = res.data[0]
+        if (stuInfo == undefined) {
+          wx.showToast({
+            title: '学号错误',
+            icon: 'error',
+            duration: 2000
+          })
+          return
+        }
         console.log("stuInfo", stuInfo)
         if (name == stuInfo.stuName) {
+          wx.setStorageSync('no', no)
+          wx.setStorageSync('name', name)
           console.log('登陆成功')
           wx.showToast({
             title: '登陆成功',
           })
-          wx.navigateTo({
-            url: '../upload/upload?name=' + stuInfo.stuName + '&no='+ stuInfo.stuNo,
-          })
+          if (name == 'master') {
+            wx.navigateTo({
+              url: '../master/master',
+            })
+          } else {
+            wx.navigateTo({
+              url: '../upload/upload?name=' + stuInfo.stuName + '&no='+ stuInfo.stuNo,
+            })
+          }
+
           //保存用户登陆状态
           wx.setStorageSync('stuInfo', stuInfo)
         } else {

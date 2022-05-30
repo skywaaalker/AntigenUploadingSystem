@@ -1,0 +1,42 @@
+
+  <!--pages/master/master.wxml-->
+<view class="container">
+  <view class="top"> 
+  <image class="banner"  src="/images/banner.jpg" ></image>
+  </view>
+
+  <view class="column">
+    <text>{{today}}<block wx:if="{{beforeNoon}}">上午</block>
+      <block wx:if="{{!beforeNoon}}">晚上</block>未提交的名单如下：</text><text class="refresh" bindtap="freshPage">刷新</text>
+  </view>
+
+  <view class="area">
+    <view wx:if="{{beforeNoon}}" wx:for="{{missList1}}" class="{{index%2==0?'list-gray':'list'}}">
+      <text>{{item.stuName}} {{item.stuNo}} {{item.dom}}</text>
+    </view>
+    <view wx:if="{{!beforeNoon}}" wx:for="{{missList2}}" class="{{index%2==0?'list-gray':'list'}}">
+      <text>{{item.stuName}} {{item.stuNo}} {{item.dom}}</text>
+    </view>
+  </view>
+
+  <view class="column">
+    <text>{{today}}<block wx:if="{{beforeNoon}}">上午</block>
+      <block wx:if="{{!beforeNoon}}">晚上</block>异常或者阳性的名单如下：</text>
+  </view>
+  <view class="area2">
+    <view  wx:for="{{posList}}" class="{{index%2==0?'list-gray':'list'}}">
+      <text bindtap="previewPosImg" data-url="{{item.fileID}}">{{item.pos[0].stuName}} {{item.stuNo}} {{item.pos[0].dom}} {{item.choice==2?'阳性':'异常'}}</text>
+    </view>
+  </view>
+
+  <view class="column">
+    <text>{{today}}<block wx:if="{{beforeNoon}}">上午</block>
+      <block wx:if="{{!beforeNoon}}">晚上</block>重复提交的名单如下：</text>
+  </view>
+  <view class="area2">
+    <view  wx:for="{{repList}}" class="{{index%2==0?'list-gray':'list'}}">
+      <text>{{item.rep[0].stuName}} {{item.stuNo}} {{item.rep[0].dom}} {{item.qrcode}}</text>
+    </view>
+  </view>
+
+</view>

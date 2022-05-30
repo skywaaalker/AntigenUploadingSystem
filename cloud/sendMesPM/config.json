@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+    {
+      "name": "sendMesPM",
+      "type": "timer",
+      "config": "0 45 20 * * * *"
+    }
+  ]
+}

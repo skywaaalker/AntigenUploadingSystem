@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "pages/history/history",
+    "pages/master/master"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,5 +13,6 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
 }

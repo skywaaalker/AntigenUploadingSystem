@@ -21,27 +21,24 @@
   padding-bottom: 20px;
   padding-left: 10px;
 }
+.query{
+  background-color: rgb(229, 229, 236);
+  margin-left: 10px;
+  border-radius: 4px;
+}
 .name_no{
   margin-right: 13px;
   margin-top: 10px;
   margin-left: 10px;
-  font-size: 18px;
+  padding-left: 15px;
+  font-size: 20px;
   background-color: rgba(233, 233, 236, 0.699);
 }
-
-.box{
-  height: 70px;
-  width: 70px;
-  display: flex;
-  margin-top: 20px;
-  margin-left: 12px;
-  border-width: 1px;
-  border-style: dashed;
-  border-color: lightblue;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+.check{
+  padding-left: 10px;
 }
+
+
 .color-red{
   color: red;
 }
@@ -89,7 +86,55 @@
 .column1{
   width: 100%;
 }
+.box{
+  height: 70px;
+  width: 70px;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 12px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: lightblue;
+  text-align: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.antigen{
+  width: 70px;
+  height: 70px;
+}
+.box2{
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
+  margin-left: 12px;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: lightblue;
+  position: relative;
+}
+.del-icon{
+  width: 8px;
+  height: 8px;
+  right: 0px;
+  top: -10px;
+  position: absolute;
+}
+.upSuccess{
+  width: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  color: red;
+  font-style: oblique;
+  opacity: 0.50;
+  font-size: 13px;
+  text-align: left;
+}
+
 .submit{
+  margin-top: 10px;
   width: 95% !important;
   background-color: rgb(25, 141, 236);
   color: white;

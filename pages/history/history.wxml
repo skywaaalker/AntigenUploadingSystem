@@ -1,0 +1,19 @@
+<wxs module="date" src="../../utils/dateFormat.wxs"></wxs>
+<view class="container">
+  <view class="top"> 
+  <image class="banner"  src="/images/banner.jpg" ></image>
+  </view>
+  <view class="column">
+    <text>hello,{{name}},你的参与记录如下：</text>
+  </view>
+  <view class="area">
+    <view wx:for="{{uploadList}}" class="{{index%2==0?'list-gray':'list'}}">
+      <text>{{date.formatTime1(item.dateStr)}} {{item.qrcode}}
+      </text>
+    </view>
+  </view>
+  <view>
+    <button class="back" bindtap="backToUpload">返回
+    </button>
+  </view>
+</view>

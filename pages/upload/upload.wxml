@@ -7,27 +7,40 @@
   <image class="banner"  src="/images/banner.jpg" ></image>
   </view>
   <view class="column">
-    <text><text class="color-red">*</text>请确认你的姓名学号:</text>
+    <text><text class="color-red">*</text>请确认你的姓名学号:</text> <text class="query" decode="true" bindtap="queryList">查看提交记录</text>
     <!-- <textarea class="textarea_"> {{name}} {{no}}</textarea> -->
     <view class="name_no">
     <text clsss="check" decode="true">{{name}} &ensp;&ensp;&ensp;{{no}}</text> 
     </view>
   </view>
   <view class="column">
-    <text><text class="color-red">*</text>抗原检测结果:</text>
+    <text><text class="color-red">*</text>检测结果:</text>
     <view class="buttonCol">
       <button class="btn btn1 {{btn1checked?'active':''}}" bindtap="click1"> 阴性</button>
       <button class="btn btn2 {{btn2checked?'active':''}}" bindtap="click2"> 阳性</button>
       <button class="btn btn3 {{btn3checked?'active':''}}" bindtap="click3"> 异常</button>
     </view>
   </view>
-  <view class="column">
-    <text><text class="color-red">*</text>请上传抗原检测结果图片</text>
-    <view class="box" bindtap="uploadImg" style="color: gray;">点击此处上传图片
+  <view class="column" style="width: 100%; height: 286rpx; display: block; box-sizing: border-box">
+    <text><text class="color-red">*</text>请上传检测结果图片</text>
+    <view wx:if="{{!hasUploadedImg}}" class="box" bindtap="uploadImg" style="color: gray;">点击此处上传图片</view>
+    <view wx:if="{{hasUploadedImg}}" class="box2">
+      <image class="antigen" src="{{filePath}}" mode="aspectFit" bindtap="previewImg"></image>
+      <view wx:if="{{showDelIcon}}" class="del-icon">
+        <icon type="cancel" size="20" bindtap="del_img"></icon>
+      </view>  
     </view>
+    <view wx:if="{{hasUploadedImg}}" class="upSuccess">
+      <view>上传成功
+      <block wx:if="{{hasScanQRcode}}">{{qrcodeURL}}</block>
+      <block wx:if="{{!hasScanQRcode && !scanFinished}}"> 识别中....</block>
+      <block wx:if="{{!hasScanQRcode && scanFinished }}"> 识别失败,请重新上传</block>
+      </view>
+    </view>
+
   </view>
   <view class="column1 bot">
-    <button class="submit">提交
+    <button class="submit" bindtap="upload_info">提交
     </button>
   </view>
 

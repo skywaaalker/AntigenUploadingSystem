@@ -1,4 +1,12 @@
 /**index.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0rpx 0;
+  box-sizing: border-box;
+} 
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,8 +26,18 @@
   margin-top: 50px;
 }
 
+.shtech{
+  height: 100px;
+  width: 100px;
+  margin-top: 50px;
+}
+.title{
+  margin-top: 10%;
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+}
 .stu-info {
-  margin-top: 10px;
+  margin-top: 50px;
 
 }
 

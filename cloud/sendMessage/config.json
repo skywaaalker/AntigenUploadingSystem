@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "openapi": [
+    ]
+  },
+  "triggers": [
+    {
+      "name": "sendMessage",
+      "type": "timer",
+      "config": "0 45 9 * * * *"
+    }
+  ]
+}
